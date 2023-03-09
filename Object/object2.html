@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let bandInfo;
+
+// Put your code here
+
+const band= {
+ name: 'Jackson 5',
+ nationality: 'Chicago Illionis',
+ genre: 'Pop',
+ members: 5,
+ formed: 1960,
+ split: 'false',
+ albums : [ { name : 'Thriller', release: 1965}, {name: 'Bad', release: 1980}]
+}
+
+bandInfo = `This is the ${band.name} from ${band.nationality}. They have been up since ${band.formed} and perform mainly ${band.genre} music. Some of their popular albums is ${band.albums[0].name} released on ${band.albums[0].release}`;
+
+
+// Don't edit the code below here
+
+let para1 = document.createElement('p');
+para1.textContent = bandInfo;
+section.appendChild(para1);
+    
+</script>
+</html>
