@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/output.css">
+    <title>cipher.ee</title>
+</head>
+<body>
+    <main class="bg-slate-800 flex flex-col items-center justify-center h-screen w-screen">
+        <h1>Ceasars-Cipher</h1>
+        <div class="h-[450px] w-[50%] bg-emerald-500 rounded-xl shadow-md flex flex-col justify-center items-center">
+          <input type="text" placeholder="Type code here" class="outline-none h-16 w-[70%] border-black border-solid bg-opacity-20 bg-black my-4 placeholder:text-[15px] placeholder:tracking-wider px-16">
+          <div id="button" class="h-16 w-[200px] bg-white bg-opacity-40 rounded-lg flex justify-center items-center font-bold text-[20px] cursor-pointer hover:bg-opacity-100 hover:transition-all transition-all">Generate</div>
+          <div  class="outline-none h-16 w-[70%] border-black border-solid bg-opacity-20 bg-black my-4 placeholder:text-[15px] px-16 flex justify-center items-center text-white">Decoded text here</div>
+        </div>
+    </main>
+</body>
+<script>
+  let input = document.querySelector('input')
+  let div = document.querySelectorAll('div')
+  let bttn = div[1]
+  let output = div[2]
+
+    function rot13(str) {
+    str = input.value
+  let letters = [' ','A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W', 'X','Y','Z'] 
+  let decode = ['A','B','C','D','E','F','G','H','I','J','K', 'L','M']
+  let encode = ['N','O','P','Q','R','S','T','U','V','W', 'X','Y','Z']
+
+  let regex = /[a-zA-Z !@#$%\^\&*.\?]/gi
+  str = str.toUpperCase()
+  str = str.match(regex)
+ 
+
+
+for(let i =0; i <= str.length-1; i++){
+  
+  if(letters.indexOf(str[i]) == 0){
+    str[i] = " "
+  }else if(letters.includes(str[i]) == false){
+    str[i] = str[i]
+  }
+  else if(letters.indexOf(str[i]) <= 13){
+    let letterIndex = decode.indexOf(str[i]) 
+    str[i] = encode[letterIndex]
+  }else{
+    let letterIndex = encode.indexOf(str[i]) 
+    str[i] = decode[letterIndex]
+  }
+  
+}
+
+str = str.join('')
+
+  // return str;
+  output.textContent = ""
+  output.textContent = str
+}
+
+bttn.addEventListener('click', rot13)
+
+
+
+
+
+// console.log(rot13("SERR PBQR PNZC"))
+// console.log(rot13("SERR CVMMN!"))
+// console.log(rot13("SERR YBIR?"))
+// console.log(rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT."))
+</script>
+</html>
