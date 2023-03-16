@@ -8,11 +8,11 @@
     <title>cipher.ee</title>
 </head>
 <body>
-    <main class="bg-slate-800 flex flex-col items-center justify-center h-screen w-screen">
+    <main class="bg-slate-700 flex flex-col items-center justify-center h-screen w-screen">
         <h1>Ceasars-Cipher</h1>
-        <div class="h-[450px] w-[50%] bg-emerald-500 rounded-xl shadow-md flex flex-col justify-center items-center">
+        <div class="shadow-xl shadow-zinc-800 h-[450px] w-[50%] bg-emerald-500 rounded-xl flex flex-col justify-center items-center">
           <input type="text" placeholder="Type code here" class="outline-none h-16 w-[70%] border-black border-solid bg-opacity-20 bg-black my-4 placeholder:text-[15px] placeholder:tracking-wider px-16">
-          <div id="button" class="h-16 w-[200px] bg-white bg-opacity-40 rounded-lg flex justify-center items-center font-bold text-[20px] cursor-pointer hover:bg-opacity-100 hover:transition-all transition-all">Generate</div>
+          <!-- <div id="button" class="h-16 w-[200px] bg-white bg-opacity-40 rounded-lg flex justify-center items-center font-bold text-[20px] cursor-pointer hover:bg-opacity-100 hover:transition-all transition-all">Generate</div> -->
           <div  class="outline-none h-16 w-[70%] border-black border-solid bg-opacity-20 bg-black my-4 placeholder:text-[15px] px-16 flex justify-center items-center text-white">Decoded text here</div>
         </div>
     </main>
@@ -59,7 +59,7 @@ str = str.join('')
   output.textContent = str
 }
 
-bttn.addEventListener('click', rot13)
+input.addEventListener('change', rot13)
 
 
 
